@@ -24,7 +24,7 @@ class Routing {
     logicBtn = "/html/body/div/div/div[2]/div[2]/div[2]/div[1]/div[2]/a"
     createLogicBtn = "/html/body/div/div/div[2]/div[2]/div[2]/div[2]/div/div/div[2]/button"
     selectQuesBtn = "/html/body/div[2]/div/div[2]/form/div[1]/div/div[2]/div[1]/div/div[1]/button"
-    selectQues = "/html/body/div[2]/div/div[2]/form/div[1]/div/div[2]/div[1]/div/div[1]/select/option[1]"
+    //selectQues = "/html/body/div[2]/div/div[2]/form/div[1]/div/div[2]/div[1]/div/div[1]/select/option[1]"
     selectConditionBtn = "/html/body/div[2]/div/div[2]/form/div[1]/div/div[2]/div[1]/div/div[2]/button"
     selectCondition = "/html/body/div[2]/div/div[2]/form/div[1]/div/div[2]/div[1]/div/div[2]/select/option[1]"
     addValue = "/html/body/div[2]/div/div[2]/form/div[1]/div/div[2]/div[1]/div/div[3]/input"
@@ -86,12 +86,16 @@ class Routing {
         cy.xpath(this.addQuesBtn).click();
     }
 
+    setQues(name){
+        cy.xpath(this.quesName).type(name);
+    }
+
     saveQues(){
         cy.xpath(this.saveQuesBtn).click();
     }
 
     saveForm(){
-        cy.xpath(this.saveQuesBtn).click();
+        cy.xpath(this.saveFormBtn).click();
     }
 
     //methods for logic 
@@ -103,8 +107,8 @@ class Routing {
         cy.xpath(this.createLogicBtn).click();
     }
 
-    QuesBtn(){
-        cy.xpath(this.QuesBtn).click();
+    logicQues(){
+        cy.xpath(this.selectQuesBtn).click();
     }
 
     giveValue(){

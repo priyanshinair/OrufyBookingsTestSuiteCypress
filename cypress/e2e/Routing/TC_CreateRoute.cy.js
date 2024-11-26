@@ -4,16 +4,14 @@ import { loginPage } from "../../support/PageObjects/LoginPage";
 
 describe('routing test', () => {
 
+    beforeEach(() => {
+        cy.viewport(1920,1080); //desktop view
+        cy.login();
+    })
+
     it('create route form', () => {
 
-        loginPage.visit();
-        
-        
-        loginPage.enterEmail("priyanshi+ww@orufy.com");
-        loginPage.enterPassword("Orufy@123");
-        loginPage.loginBtn();
-
-        
+        cy.wait(5000)
         RoutingModule.visit();
         RoutingModule.create();
         RoutingModule.setName("cypress test");
