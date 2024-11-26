@@ -3,13 +3,13 @@ import { contacts } from "../../support/PageObjects/Contacts";
 
 describe("contacts test ", () => {
 
+    beforeEach(() => {
+        cy.login();
+    })
+
     it('edit a contact', () => {
 
-        loginPage.visit();
-        loginPage.enterEmail("priyanshi+ww@orufy.com");
-        loginPage.enterPassword("Orufy@123");
-        loginPage.loginBtn();
-
+    
         cy.wait(5000);
 
         contacts.visit();

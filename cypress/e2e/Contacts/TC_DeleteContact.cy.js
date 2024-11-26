@@ -4,12 +4,11 @@ import { loginPage } from "../../support/PageObjects/LoginPage"
 
 describe("contacts tests", () => {
 
-    it('delete contact', () => {
+    beforeEach(() =>{
+        cy.login();
+    })
 
-        loginPage.visit();
-        loginPage.enterEmail("priyanshi+ww@orufy.com");
-        loginPage.enterPassword("Orufy@123");
-        loginPage.loginBtn();
+    it('delete contact', () => {
 
         cy.wait(5000);
 

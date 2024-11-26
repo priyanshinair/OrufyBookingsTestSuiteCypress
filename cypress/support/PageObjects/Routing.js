@@ -6,9 +6,11 @@ class Routing {
     createBtn = "/html/body/div/div/div[2]/div[2]/section/section/div[1]/button"
     nameField = "/html/body/div[2]/div/form/div[1]/div/input"
     saveBtn = "/html/body/div[2]/div/form/div[2]/div/button"
-    threeDotsBtn = "/html/body/div/div/div[2]/div[2]/section/section/div[2]/section/div/table/tbody/tr[1]/td[6]/button[2]"
+    threeDotsBtn = "/html/body/div/div/div[2]/div[2]/section/section/div[2]/section/div/div[1]/div[1]/div[2]/button"
     renameBtn = "/html/body/div[2]/div/div[2]"
     deleteBtn = "/html/body/div[2]/div/div[5]"
+    confirmDeleteBtn = "/html/body/div[2]/div/div[2]/button[2]"
+
 
     //elements of form
     fromName = "/html/body/div/div/div[2]/div[2]/div[2]/div[2]/div/div/form/div[1]/div[1]/input"
@@ -65,6 +67,10 @@ class Routing {
 
     delete(){
         cy.xpath(this.deleteBtn).click();
+    }
+
+    confirmDelete(){
+        cy.xpath(this.confirmDeleteBtn).click();
     }
 
     //methods for form
