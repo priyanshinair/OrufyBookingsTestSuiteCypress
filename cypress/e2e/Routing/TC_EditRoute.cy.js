@@ -22,13 +22,20 @@ describe("routing tests", () => {
         RoutingModule.addQues();
         RoutingModule.setQues("cypress question");
         RoutingModule.saveQues();
+        cy.wait(2000);
         RoutingModule.saveForm();
 
         //update route logic
+        cy.wait(2000);
         RoutingModule.logic();
         RoutingModule.createLogic();
         RoutingModule.logicQues();
+        cy.get('body').type('{enter}');
+        RoutingModule.conditionBtn();
         cy.get('body').type('{enter}')
-
+        RoutingModule.giveValue("test");
+        RoutingModule.eventType();
+        cy.get('body').type('{enter}');
+        RoutingModule.saveLogic();
     })
 })

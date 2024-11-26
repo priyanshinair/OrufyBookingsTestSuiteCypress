@@ -9,6 +9,7 @@ class Routing {
     threeDotsBtn = "/html/body/div/div/div[2]/div[2]/section/section/div[2]/section/div/div[1]/div[1]/div[2]/button"
     renameBtn = "/html/body/div[2]/div/div[2]"
     deleteBtn = "/html/body/div[2]/div/div[5]"
+    editBtn = "/html/body/div[2]/div/div[1]"
     confirmDeleteBtn = "/html/body/div[2]/div/div[2]/button[2]"
 
 
@@ -26,14 +27,14 @@ class Routing {
     selectQuesBtn = "/html/body/div[2]/div/div[2]/form/div[1]/div/div[2]/div[1]/div/div[1]/button"
     //selectQues = "/html/body/div[2]/div/div[2]/form/div[1]/div/div[2]/div[1]/div/div[1]/select/option[1]"
     selectConditionBtn = "/html/body/div[2]/div/div[2]/form/div[1]/div/div[2]/div[1]/div/div[2]/button"
-    selectCondition = "/html/body/div[2]/div/div[2]/form/div[1]/div/div[2]/div[1]/div/div[2]/select/option[1]"
-    addValue = "/html/body/div[2]/div/div[2]/form/div[1]/div/div[2]/div[1]/div/div[3]/input"
+    //selectCondition = "/html/body/div[2]/div/div[2]/form/div[1]/div/div[2]/div[1]/div/div[2]/select/option[1]"
+    addValue = "/html/body/div[2]/div/div[2]/form/div[1]/div/div[2]/div[1]/div/div[3]/div/input"
     eventTypeBtn = "/html/body/div[2]/div/div[3]/form/div/div[2]/div/button"
     selectEventType = "/html/body/div[2]/div/div[3]/form/div/div[2]/div/select/option[1]"
     saveLogicBtn = "/html/body/div[2]/div/div[3]/form/button"
 
     //share routing form elements
-    shareBtn = "/html/body/div/div/div[2]/div[2]/div[1]/div/div/div[2]/div/button"
+    shareBtn = "/html/body/div/div/div[2]/div[2]/section/section/div[2]/section/div/div/table/tbody/tr[1]/td[6]/button[1]"
     copyLinkBtn = "/html/body/div[2]/div/div[2]/div/div[1]/div/button"
 
     //submit button on routing form
@@ -68,6 +69,11 @@ class Routing {
     delete(){
         cy.xpath(this.deleteBtn).click();
     }
+
+    edit(){
+        cy.xpath(this.editBtn).click();
+    }
+
 
     confirmDelete(){
         cy.xpath(this.confirmDeleteBtn).click();
@@ -111,15 +117,19 @@ class Routing {
         cy.xpath(this.selectQuesBtn).click();
     }
 
-    giveValue(){
-        cy.xpath(this.addValue).click();
+    conditionBtn(){
+        cy.xpath(this.selectConditionBtn).click();
+    }
+
+    giveValue(name){
+        cy.xpath(this.addValue).type(name);
     }
 
     eventType(){
         cy.xpath(this.eventTypeBtn).click();
     }
 
-    saveLogicBtn(){
+    saveLogic(){
         cy.xpath(this.saveLogicBtn).click();
     }
 
