@@ -10,6 +10,6 @@ export const PageLinks = {
     appsIntegrationUrl : "https://bookings.beta.orufy.in/apps-integration",
     bookingsUrl : "https://bookings.beta.orufy.in/bookings",
     routingUrl : "https://bookings.beta.orufy.in/routing",
-    webhooksUrl : "https://bookings.beta.orufy.in/settings/webhooks"
-
+    webhooksUrl : "https://bookings.beta.orufy.in/settings/webhooks",
+    teamUrl : "https://bookings.beta.orufy.in/team"
 }
