@@ -15,11 +15,19 @@ describe("routing test", () => {
         RoutingModule.share();
         RoutingModule.copyLink();
         
-        cy.window().then((win) => {
-            win.navigator.clipboard.readText().then((copiedLink) => {
-              cy.visit(copiedLink); // Use the copied link to open the page
-            });
-          });
+        // Get the link from the modal and store it
+    cy.xpath('/html/body/div[2]/div/div[2]/div/div[1]/div/button') // Replace with the input or element that displays the link
+    .invoke('val') // Use 'invoke' to get the value if it's an input, or 'text' if it's plain text
+    .then((link) => {
+      // Log the copied link for debugging
+      cy.log(`Copied Link: ${link}`);
+
+      // Visit the copied link
+      cy.visit(link);
+
+      // Validate the page opened correctly
+      cy.url().should('eq', link); // Ensure the URL matches
+    });
     })
     
 })
