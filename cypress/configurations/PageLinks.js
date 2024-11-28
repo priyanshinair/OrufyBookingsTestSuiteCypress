@@ -11,5 +11,6 @@ export const PageLinks = {
     bookingsUrl : "https://bookings.beta.orufy.in/bookings",
     routingUrl : "https://bookings.beta.orufy.in/routing",
     webhooksUrl : "https://bookings.beta.orufy.in/settings/webhooks",
-    teamUrl : "https://bookings.beta.orufy.in/team"
+    teamUrl : "https://bookings.beta.orufy.in/team",
+    rolesUrl : "https://bookings.beta.orufy.in/roles-permissions"
 }
