@@ -37,4 +37,21 @@ Cypress.Commands.add("login", () => {
     cy.xpath('/html/body/div/div[1]/div/form/div[2]/div/input').type("Orufy@123"); // Replace with your password locator
     cy.xpath('/html/body/div/div[1]/div/form/div[3]/button').click(); // Replace with your submit button locator
   });
+
+
+//global login api call
+Cypress.Commands.add("loginAPI",() =>{
+
+  cy.request({
+    method :'POST', 
+    url : 'https://orufy.com/api/v1/user/login',
+    body: {
+        
+            emailId:"priyanshi+ww@orufy.com",
+            password:"Orufy@123",
+            productId:"BOOKINGS"
+        
+    }
+} )
+})
   
