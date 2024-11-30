@@ -1,0 +1,104 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-11-30T06:18:42.042Z",
+    "end": "2024-11-30T06:18:59.010Z",
+    "duration": 16968,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cbc45d11-e960-4f2c-8390-bc9bc5305aba",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Routing\\TC_ShareRouteForm.cy.js",
+      "file": "cypress\\e2e\\Routing\\TC_ShareRouteForm.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2c62cce5-a38d-45a0-bca4-b595bc5e1bc4",
+          "title": "routing test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "share route form ",
+              "fullTitle": "routing test share route form ",
+              "timedOut": null,
+              "duration": 11996,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.wait(4000);\n_Routing.RoutingModule.visit();\n_Routing.RoutingModule.share();\n_Routing.RoutingModule.copyLink();\n// Get the link from the modal and store it\ncy.xpath('/html/body/div[2]/div/div[2]/div/div[1]/div/button') // Replace with the input or element that displays the link\n.invoke('val') // Use 'invoke' to get the value if it's an input, or 'text' if it's plain text\n.then(link => {\n  // Log the copied link for debugging\n  cy.log(`Copied Link: ${link}`);\n  // Visit the copied link\n  cy.visit(link);\n  // Validate the page opened correctly\n  cy.url().should('eq', link); // Ensure the URL matches\n});",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nWe failed looking for this file at the path:\n\n/orufybookingswithcypress/\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nWe failed looking for this file at the path:\n\n/orufybookingswithcypress/\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n    at <unknown> (https://beta.orufy.in/__cypress/runner/cypress_runner.js:131461:76)\n    at visitFailedByErr (https://beta.orufy.in/__cypress/runner/cypress_runner.js:130876:12)\n    at <unknown> (https://beta.orufy.in/__cypress/runner/cypress_runner.js:131444:13)\n    at tryCatcher (https://beta.orufy.in/__cypress/runner/cypress_runner.js:1830:23)\n    at Promise._settlePromiseFromHandler (https://beta.orufy.in/__cypress/runner/cypress_runner.js:1542:31)\n    at Promise._settlePromise (https://beta.orufy.in/__cypress/runner/cypress_runner.js:1599:18)\n    at Promise._settlePromise0 (https://beta.orufy.in/__cypress/runner/cypress_runner.js:1644:10)\n    at Promise._settlePromises (https://beta.orufy.in/__cypress/runner/cypress_runner.js:1720:18)\n    at _drainQueueStep (https://beta.orufy.in/__cypress/runner/cypress_runner.js:2430:12)\n    at _drainQueue (https://beta.orufy.in/__cypress/runner/cypress_runner.js:2423:9)\n    at Async._drainQueues (https://beta.orufy.in/__cypress/runner/cypress_runner.js:2439:5)\n    at Async.drainQueues (https://beta.orufy.in/__cypress/runner/cypress_runner.js:2309:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypresstestsuite/./cypress/e2e/Routing/TC_ShareRouteForm.cy.js:26:9)",
+                "diff": null
+              },
+              "uuid": "88a61346-72cb-4345-ace9-9cd26ac27425",
+              "parentUUID": "2c62cce5-a38d-45a0-bca4-b595bc5e1bc4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "88a61346-72cb-4345-ace9-9cd26ac27425"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 11996,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
