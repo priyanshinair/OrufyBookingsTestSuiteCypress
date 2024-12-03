@@ -7,7 +7,7 @@ describe("webhooks tests", () => {
         cy.login();
     })
 
-    it("create test", () => {
+    it("create webhook with all the fields correctly filled", () => {
         cy.wait(3000);
         webhooks.visit();
         webhooks.create();
@@ -18,5 +18,15 @@ describe("webhooks tests", () => {
         cy.get('body').type('{enter}');
         webhooks.secret("123");
         webhooks.save();
+    })
+
+    it("create webhook with leaving some fields blank", () =>{
+        cy.wait(2000);
+        webhooks.visit();
+        webhooks.create();
+        
+        webhooks.save();
+        webhooks.errorUrl();
+        
     })
 })
