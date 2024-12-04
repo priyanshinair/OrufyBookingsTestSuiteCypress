@@ -64,7 +64,7 @@ describe("contacts tests", () => {
         cy.login();
       });
     
-    it.skip('create new contacts with name and email only', () => {
+    it('create new contacts with name and email only', () => {
 
         
         cy.wait(5000);
@@ -77,6 +77,8 @@ describe("contacts tests", () => {
         const randomEmail = generateRandomEmail();
         contacts.setName(randomName);
         contacts.setEmail(randomEmail);
+        contacts.timezone();
+        contacts.searchTimezone("Asia/Kolkata")
         contacts.save();
         cy.wait(5000);
         }
