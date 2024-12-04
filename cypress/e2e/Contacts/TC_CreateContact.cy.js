@@ -15,6 +15,18 @@ function generateRandomString(length) {
     
     return result;
   }
+
+  //function to generate random 10 digit number
+  function number(){
+    const numbers = "1234567890"
+    let result;
+
+    for(let i =0;i<=9;i++){
+      const randomIndex = Math.floor(Math.random() * numbers.length);
+      result += numbers[randomIndex];
+    }
+    return result;
+  }
   
 
   //function to generate random email ids
@@ -52,7 +64,7 @@ describe("contacts tests", () => {
         cy.login();
       });
     
-    it('create new contacts', () => {
+    it.skip('create new contacts with name and email only', () => {
 
         
         cy.wait(5000);
@@ -68,5 +80,22 @@ describe("contacts tests", () => {
         contacts.save();
         cy.wait(5000);
         }
+    })
+
+    it('create contact with timezone and mobile number also', () => {
+      cy.wait(2000);
+      contacts.visit();
+      /*
+      contacts.create();
+      const randomName = generateRandomString(10);
+      const randomEmail = generateRandomEmail();
+      contacts.setEmail(randomName)
+      contacts.setEmail(randomEmail)
+      contacts.timezone();
+      contacts.searchTimezone("Europe/Tirane");
+      cy.get('body').type('{enter}');
+      const randomNumber = number();
+      contacts.save();
+      */
     })
 })

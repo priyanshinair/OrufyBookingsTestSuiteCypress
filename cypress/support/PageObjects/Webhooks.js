@@ -43,7 +43,7 @@ class Webhooks {
     }
 
     errorUrl(){
-        cy.xpath(this.errorOnUrl).should('visible').and('contains','Please enter valid url');
+        cy.get("#\\:r3k\\-form-item-message").should('be.visible')
     }
 
     threeDots(){
