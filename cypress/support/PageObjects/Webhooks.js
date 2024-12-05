@@ -8,7 +8,7 @@ class Webhooks {
     eventBtn = "/html/body/div[2]/div/form/div[3]/div/div/div[1]/div[1]/div[2]/input";
     secretField = "/html/body/div[2]/div/form/div[4]/input";
     saveBtn = "";
-    errorOnUrl = "/html/body/div[3]/div/form/div[1]/p"
+    errorOnUrl = "/html/body/div[2]/div/form/div[1]/p"
 
     threeDotsBtn = "/html/body/div/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/button";
     deleteBtn = "/html/body/div[2]/div/div[1]";
@@ -30,8 +30,16 @@ class Webhooks {
         cy.xpath(this.triggerBtn).click();
     }
 
+    triggerWithArrowKeys(){
+        return cy.xpath(this.triggerBtn);
+    }
+
     event(){
         cy.xpath(this.eventBtn).click();
+    }
+
+    eventWithWithArrowKeys(){
+        return cy.xpath(this.eventBtn);
     }
 
     secret(name){
@@ -43,7 +51,7 @@ class Webhooks {
     }
 
     errorUrl(){
-        cy.get("#\\:r3k\\-form-item-message").should('be.visible')
+        cy.xpath(this.errorOnUrl).should('be.visible').and('contain','Please enter valid url')
     }
 
     threeDots(){

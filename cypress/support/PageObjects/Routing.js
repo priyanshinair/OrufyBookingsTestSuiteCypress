@@ -6,11 +6,13 @@ class Routing {
     createBtn = "/html/body/div/div/div[2]/div[2]/section/section/div[1]/button"
     nameField = "/html/body/div[2]/div/form/div[1]/div/input"
     saveBtn = "/html/body/div[2]/div/form/div[2]/div/button"
+    errorOnField = "/html/body/div[2]/div/form/div[1]/div/p"
     threeDotsBtn = "/html/body/div/div/div[2]/div[2]/section/section/div[2]/section/div/div[1]/div[1]/div[2]/button"
     renameBtn = "/html/body/div[2]/div/div[2]"
     deleteBtn = "/html/body/div[2]/div/div[5]"
     editBtn = "/html/body/div[2]/div/div[1]"
     confirmDeleteBtn = "/html/body/div[2]/div/div[2]/button[2]"
+    
 
 
     //elements of form
@@ -56,6 +58,10 @@ class Routing {
 
     setName(name){
         cy.xpath(this.nameField).type(name);
+    }
+
+    errorField(){
+        cy.xpath(this.errorOnField).should('be.visible').and('contain','Name is required');
     }
 
     threeDotBtn(){

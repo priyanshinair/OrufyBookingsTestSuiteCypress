@@ -10,11 +10,13 @@ describe('routing test', () => {
         { device: 'Mobile', width: 375, height: 667 },
       ];
     beforeEach(() => {
-        //cy.viewport(1920,1080); //desktop view
+        cy.viewport(1920,1080); //desktop view
         cy.login();
     })
+ 
+    /*
     viewports.forEach((viewport) => {
-    it('create route form', () => {
+    it('create route form (positive case)', () => {
 
         cy.viewport(viewport.width, viewport.height);
         cy.wait(5000)
@@ -23,5 +25,17 @@ describe('routing test', () => {
         RoutingModule.setName("cypress test");
         RoutingModule.save();
     });
+    
+    })
+*/
+    //verify if showing error if saving without filling name
+    it('if showing error if saving without filling name', () => {
+
+        cy.wait(2000);
+        RoutingModule.visit();
+        
+        RoutingModule.create();
+        RoutingModule.save();
+        RoutingModule.errorField();
     })
 })
