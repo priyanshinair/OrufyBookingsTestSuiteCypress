@@ -5,14 +5,11 @@ describe("contacts test ", () => {
 
     beforeEach(() => {
         cy.login();
+        contacts.visit();
     })
 
     it('edit a contact', () => {
 
-    
-        cy.wait(5000);
-
-        contacts.visit();
         contacts.threeDots();
         contacts.edit();
 

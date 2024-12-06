@@ -5,13 +5,13 @@ describe("Webhooks Test Cases", () => {
     beforeEach(() => {
         cy.viewport(1920, 1024);
         cy.login();
+        webhooks.visit();
     })
 
 
     //TC_01 Verify if able to create a webhook by filling required fields 
     it("create webhook with all the fields correctly filled", () => {
-        cy.wait(3000);
-        webhooks.visit();
+        
         webhooks.create();
         
         webhooks.seturl("https://orufy.com");

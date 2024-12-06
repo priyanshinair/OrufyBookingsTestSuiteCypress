@@ -6,13 +6,11 @@ describe("routing tests", () => {
 
     beforeEach(()=>{
         cy.login();
+        RoutingModule.visit();
     })
 
     it('delete route', () =>{
 
-        cy.wait(5000);
-
-        RoutingModule.visit();
         RoutingModule.threeDotBtn();
         RoutingModule.delete();
         RoutingModule.confirmDelete();

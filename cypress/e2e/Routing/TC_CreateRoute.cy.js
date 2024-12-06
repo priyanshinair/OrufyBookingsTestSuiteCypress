@@ -12,6 +12,7 @@ describe('routing test', () => {
     beforeEach(() => {
         cy.viewport(1920,1080); //desktop view
         cy.login();
+        RoutingModule.visit();
     })
  
     /*
@@ -31,7 +32,6 @@ describe('routing test', () => {
     //verify if showing error if saving without filling name
     it('if showing error if saving without filling name', () => {
 
-        cy.wait(2000);
         RoutingModule.visit();
         
         RoutingModule.create();

@@ -6,6 +6,7 @@ describe("contacts tests", () => {
 
     beforeEach(() =>{
         cy.login();
+        contacts.visit();
     })
 
     it('delete contact', () => {

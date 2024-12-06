@@ -5,12 +5,10 @@ describe("routing test", () => {
     beforeEach(() => {
         cy.viewport(1920,1080);
         cy.login();
+        RoutingModule.visit();
     })
 
     it('share route form ', () => {
-        cy.wait(4000);
-
-        RoutingModule.visit();
         
         RoutingModule.share();
         RoutingModule.copyLink();

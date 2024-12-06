@@ -5,12 +5,11 @@ describe("members test", () => {
     beforeEach( () => {
         cy.viewport(1920, 1020);
         cy.login();
+        members.visit();
     })
 
     it("remove members", () => {
-        cy.wait(2000);
-        members.visit();
-
+       
         members.threeDots();
         cy.wait(2000);
         members.remove();

@@ -5,11 +5,11 @@ describe("routing tests", () => {
     beforeEach( () => {
         cy.viewport(1920,1080); //desktop view
         cy.login();
+        RoutingModule.visit();
     })
 
     it('edit route', () => {
-        cy.wait(5000);
-
+    
         //create a new route
         RoutingModule.visit();
         RoutingModule.create();

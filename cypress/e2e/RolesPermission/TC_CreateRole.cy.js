@@ -5,11 +5,11 @@ describe("roles tests", () => {
     beforeEach(() => {
         cy.viewport(1920, 1024);
         cy.login();
+        roles.visit();
     })
 
     it('create role', () => {
-        cy.wait(2000);
-        roles.visit();
+        
         roles.create();
         roles.setName("cypress role");
         roles.save();

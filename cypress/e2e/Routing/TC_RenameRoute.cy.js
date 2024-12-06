@@ -4,13 +4,11 @@ describe("routing tests", () => {
 
     beforeEach( () => {
         cy.login();
+        RoutingModule.visit();
     })
 
     it('rename route', () => {
 
-        cy.wait(2000);
-
-        RoutingModule.visit();
         RoutingModule.threeDotBtn();
         RoutingModule.rename();
         
