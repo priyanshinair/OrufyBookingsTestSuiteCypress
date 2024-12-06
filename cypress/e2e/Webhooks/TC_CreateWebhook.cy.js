@@ -1,12 +1,14 @@
 import { webhooks } from "../../support/PageObjects/Webhooks";
 
-describe("webhooks tests", () => {
+describe("Webhooks Test Cases", () => {
 
     beforeEach(() => {
         cy.viewport(1920, 1024);
         cy.login();
     })
 
+
+    //TC_01 Verify if able to create a webhook by filling required fields 
     it("create webhook with all the fields correctly filled", () => {
         cy.wait(3000);
         webhooks.visit();
@@ -22,7 +24,9 @@ describe("webhooks tests", () => {
         
     })
 
-    it("create webhook without filling all the fields and click save", () => {
+
+    //TC+02 Verify if able to create webhook without filling required fields
+    it("create webhook without filling required fields", () => {
         cy.wait(3000);
         webhooks.visit();
         webhooks.create();
@@ -31,7 +35,9 @@ describe("webhooks tests", () => {
         
     })
 
-    it("create webhook with selecting 3rd option from both the dropdowns", () => {
+    
+//TC_03 Verify if able to create webhook by selecting certain options from triggeres and events dropdown
+    it("create webhook by selecting 3rd option from both the dropdowns", () => {
         cy.wait(3000);
         webhooks.visit();
         webhooks.create();
@@ -51,7 +57,7 @@ describe("webhooks tests", () => {
         webhooks.eventWithWithArrowKeys()
         .then(($element) => {
             for(let i=0;i<3;i++){
-                cy.wrap($element).type('{downarrow}')
+                cy.wrap($element).type('{downarrow}')   //cy.wrap() in Cypress is used to wrap a non-Cypress object (like a DOM element, JavaScript object, or variable) into a Cypress chainable object, enabling you to use Cypress commands on it. 
             }
         })
         .type('{enter}');
