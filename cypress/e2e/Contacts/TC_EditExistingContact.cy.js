@@ -8,6 +8,8 @@ describe("contacts test ", () => {
         contacts.visit();
     })
 
+    //TEST CASES
+
     it('edit a contact', () => {
 
         contacts.threeDots();

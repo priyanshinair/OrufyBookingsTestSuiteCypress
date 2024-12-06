@@ -13,6 +13,8 @@ describe("Contacts Test Cases", () => {
       });
     
 
+    //TEST CASES
+
     //TC_01 Verify creating contact with name and email
     it.skip('create contact with name and email only', () => {
 
@@ -61,6 +63,8 @@ describe("Contacts Test Cases", () => {
       contacts.phoneNumber(randomNumber);
       contacts.save();
     })
+
+
 
 
     //TC_04 Verify if able to create contact without filling any details

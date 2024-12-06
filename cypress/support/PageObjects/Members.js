@@ -5,9 +5,10 @@ class Members {
     //elements
     inviteBtn ="/html/body/div/div/div[2]/div[2]/div/div[1]/div[2]/button";
     emailField = "/html/body/div[2]/div/form/div/div[1]/input";
-    roleBtn = "/html/body/div[3]/div/form/div/div[2]/button";
-    holidayBtn = "/html/body/div[3]/div/form/div/div[3]/button";
-    saveBtn = "/html/body/div[3]/div/form/button";
+    roleBtn = "/html/body/div[2]/div/form/div/div[2]/button";
+    holidayBtn = "/html/body/div[2]/div/form/div/div[3]/button";
+    errorOnField = "/html/body/div[2]/div/form/div/div[1]/p"
+    saveBtn = "/html/body/div[2]/div/form/button";
     threeDotsBtn = "/html/body/div[1]/div/div[2]/div[2]/div/div[3]/div/div/div/table/tbody/tr[2]/td[4]/button";
     editBtn = "/html/body/div[3]/div/div[1]";
     removeBtn = "/html/body/div[2]/div/div[2]";
@@ -31,12 +32,20 @@ class Members {
         cy.xpath(this.roleBtn).click();
     }
 
+    roleWithArrowKeys(){
+        return cy.xpath(this.roleBtn);
+    }
+
     holiday(){
         cy.xpath(this.holidayBtn).click();
     }
 
     save(){
         cy.xpath(this.saveBtn).click();
+    }
+
+    errorField(){
+        cy.xpath(this.errorOnField).should('be.visible').and('contain','Please enter email')
     }
 
     threeDots(){

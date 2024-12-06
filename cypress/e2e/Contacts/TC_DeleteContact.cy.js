@@ -9,6 +9,9 @@ describe("contacts tests", () => {
         contacts.visit();
     })
 
+
+    //TEST CASES 
+    
     it('delete contact', () => {
 
         cy.wait(5000);
