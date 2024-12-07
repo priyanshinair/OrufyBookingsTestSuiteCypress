@@ -9,9 +9,19 @@ describe('routing test', () => {
         { device: 'Tablet', width: 768, height: 1024 },
         { device: 'Mobile', width: 375, height: 667 },
       ];
+
+    
+    before(() => {
+        cy.session('loginSession', () => {
+            cy.login();
+        })
+    })
+
     beforeEach(() => {
+        cy.session('loginSession', () => {
+            cy.login();
+        })
         cy.viewport(1920,1080); //desktop view
-        cy.login();
         RoutingModule.visit();
     })
  

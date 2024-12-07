@@ -2,8 +2,16 @@ import { RoutingModule } from "../../support/PageObjects/Routing";
 
 describe("routing tests", () => {
 
-    beforeEach( () => {
-        cy.login();
+    before(() => {
+        cy.session('loginSession', () => {
+            cy.login();
+        })
+    })
+
+    beforeEach(() => {
+        cy.session('loginSession', () => {
+            cy.login();
+        })
         RoutingModule.visit();
     })
 

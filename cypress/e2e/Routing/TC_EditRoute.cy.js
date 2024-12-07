@@ -2,9 +2,19 @@ import { RoutingModule } from "../../support/PageObjects/Routing";
 
 describe("routing tests", () => {
 
-    beforeEach( () => {
+    before(() => {
+        cy.session('loginSession', () => {
+            cy.login();
+        })
+    })
+
+    beforeEach(() => {
+        cy.session('loginSession', () => {
+            cy.login();
+        })
+    
         cy.viewport(1920,1080); //desktop view
-        cy.login();
+        
         RoutingModule.visit();
     })
 

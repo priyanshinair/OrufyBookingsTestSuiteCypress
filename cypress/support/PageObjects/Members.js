@@ -8,10 +8,12 @@ class Members {
     roleBtn = "/html/body/div[2]/div/form/div/div[2]/button";
     holidayBtn = "/html/body/div[2]/div/form/div/div[3]/button";
     errorOnField = "/html/body/div[2]/div/form/div/div[1]/p"
+    existingUserError = "/html/body/div[2]/div/form/div/div[1]/p"
     saveBtn = "/html/body/div[2]/div/form/button";
     threeDotsBtn = "/html/body/div[1]/div/div[2]/div[2]/div/div[3]/div/div/div/table/tbody/tr[2]/td[4]/button";
     editBtn = "/html/body/div[3]/div/div[1]";
     removeBtn = "/html/body/div[2]/div/div[2]";
+    resendBtn = "/html/body/div[2]/div/div[2]"
 
     //methods
 
@@ -48,6 +50,9 @@ class Members {
         cy.xpath(this.errorOnField).should('be.visible').and('contain','Please enter email')
     }
 
+    existingUser(){
+        cy.xpath(this.existingUserError).should('be.visible').and('contain','User already invited')
+    }
     threeDots(){
         cy.xpath(this.threeDotsBtn).click();
     }
@@ -58,6 +63,10 @@ class Members {
 
     remove(){
         cy.xpath(this.removeBtn).click();
+    }
+
+    resend(){
+        cy.xpath(this.resendBtn).click();
     }
 }
 

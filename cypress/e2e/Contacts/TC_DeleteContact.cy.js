@@ -4,8 +4,15 @@ import { loginPage } from "../../support/PageObjects/LoginPage"
 
 describe("contacts tests", () => {
 
+    before(() =>{
+        cy.session('loginSession', () => {
+            cy.login();
+        })
+    })
     beforeEach(() =>{
-        cy.login();
+        cy.session('loginSession', () =>{
+            cy.login();
+        })
         contacts.visit();
     })
 

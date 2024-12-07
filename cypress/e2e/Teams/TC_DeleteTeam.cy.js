@@ -2,9 +2,18 @@ import { teams } from "../../support/PageObjects/Teams"
 
 describe("teams test", () => {
 
+    before(() => {
+        cy.session('loginSession', () => {
+            cy.login();
+        })
+    })
+
     beforeEach(() => {
+        cy.session('loginSession', () => {
+            cy.login();
+        })
+    
         cy.viewport(1920, 1024);
-        cy.login();
         teams.visit();
     })
 

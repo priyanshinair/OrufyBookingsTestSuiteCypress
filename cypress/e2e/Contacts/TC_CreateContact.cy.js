@@ -5,18 +5,27 @@ import { generateRandomEmail, generateRandomString, number } from "../../support
   
 describe("Contacts Test Cases", () => {
 
-    beforeEach(() => {
+  before(() =>{
+    cy.session('loginSession', () => {
+        cy.login();
+    })
+})
+beforeEach(() =>{
+    cy.session('loginSession', () =>{
         cy.viewport(1920, 1024)
-        cy.login(); // Use the global login command
+        cy.login();
         cy.wait(5000);
         contacts.visit();
-      });
+    })
+    contacts.visit();
+})
+    
     
 
     //TEST CASES
 
     //TC_01 Verify creating contact with name and email
-    it.skip('create contact with name and email only', () => {
+    it.skip('TC_01 Verify creating contact with name and email', () => {
 
       contacts.create();
       cy.wait(2000);
@@ -31,7 +40,7 @@ describe("Contacts Test Cases", () => {
 
 
     //TC_02 Verify creating multiple contacts for pagination purpose
-    it.skip('creating multiple contacts for pagination', () => {
+    it.skip('TC_02 Verify creating multiple contacts for pagination purpose', () => {
 
         //creating 10 contacts at a time. This code is written for pagination purpose
         for(let i=0;i<10;i++){
@@ -49,7 +58,7 @@ describe("Contacts Test Cases", () => {
 
     //TC_03 Verify creating contact by filling timezone and phone number also
 
-    it("create contact with timezone and number field as well", () => {
+    it("TC_03 Verify creating contact by filling timezone and phone number also", () => {
       
       contacts.create();
       const randomName = generateRandomString(10);
@@ -68,7 +77,7 @@ describe("Contacts Test Cases", () => {
 
 
     //TC_04 Verify if able to create contact without filling any details
-    it('create contact without filling required fields', () => {
+    it('TC_04 Verify if able to create contact without filling any details', () => {
       
       contacts.create();
       contacts.save();

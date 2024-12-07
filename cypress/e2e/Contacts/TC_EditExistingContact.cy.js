@@ -3,8 +3,16 @@ import { contacts } from "../../support/PageObjects/Contacts";
 
 describe("contacts test ", () => {
 
+    before(() => {
+        cy.session('loginSession', () => {
+            cy.login();
+        })
+    })
+
     beforeEach(() => {
-        cy.login();
+        cy.session('loginSession', () => {
+            cy.login();
+        })
         contacts.visit();
     })
 

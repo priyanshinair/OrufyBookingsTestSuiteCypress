@@ -2,9 +2,18 @@ import { members } from "../../support/PageObjects/Members"
 
 describe("members test", () => {
 
-    beforeEach( () => {
+    before(() => {
+        cy.session('loginSession', () => {
+            cy.login();
+        })
+    })
+
+    beforeEach(() => {
+        cy.session('loginSession', () => {
+            cy.login();
+        })
+    
         cy.viewport(1920, 1020);
-        cy.login();
         members.visit();
     })
 
