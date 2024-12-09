@@ -19,7 +19,7 @@ class EventTypes {
     disableBtn = "/html/body/div[2]/div/div[6]/button" 
     makeSecretBtnFromMenu = "/html/body/div[2]/div/div[5]/button"
     goToLinkBtn = "/html/body/div/div/div[2]/div[2]/div/div[2]/div[1]/div/div[2]/ul/li[1]/div[2]/div[2]/div[2]/a/div"
-
+    goToLeftSidebarBtn = "/html/body/div/div/div[1]/div/div[2]/div[1]/a"
 
     //methods
     visit(){
@@ -27,7 +27,7 @@ class EventTypes {
     }
 
     create(){
-        cy.xpath(this.createBtn).click();
+        cy.xpath(this.createBtn).should('be.visible').click();
     }
     selctGlobal(){
         cy.xpath(this.selectGlobalBtn).click();
@@ -70,6 +70,9 @@ class EventTypes {
     }
     goToLink(){
         cy.xpath(this.goToLinkBtn).click();
+    }
+    goToLeftSidebar() {
+        cy.xpath(this.goToLeftSidebarBtn).click();
     }
 
 }
