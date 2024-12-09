@@ -25,7 +25,7 @@ describe('Create Event Types Test Cases', () => {
 
     //TEST CASES
     //TC_01 Verify if able tp create a global one-on-one event with all the required fields
-    it('TC_01 Verify if able tp create a global event with all the required fields', () => {
+    it.skip('TC_01 Verify if able tp create a global event with all the required fields', () => {
         
         eventTypes.create();
         eventTypes.selctGlobal();
@@ -41,16 +41,29 @@ describe('Create Event Types Test Cases', () => {
 
     //TC_02 Verify if able to create a global event type without filling required details
     it('TC_02 Verify if able to create a global event type without filling required details',() => {
-
+        eventTypes.create();
+        eventTypes.selctGlobal()
+        eventTypes.save();
     })
 
 
 
     //TC_03 Verify if able to create collective/round-robin event type
+    //Pre-requisite : must have atleaset 2 members in the company
+    it('TC_03 Verify if able to create collective/round-robin event type', () => {
 
+    })
 
 
     //TC_04 Verify if able to create event type if respective calendar related to mode is not connected
+    it('TC_04 Verify if able to create event type if respective calendar related to mode is not connected', () => {
+        
+    })
 
-    
+
+
+    //TC_05 Verify if invite dialog appears on creating multi host event types if only one member
+    it('TC_05 Verify if invite dialog appears on creating multi host event types if only one member',() => {
+
+    })
 })
