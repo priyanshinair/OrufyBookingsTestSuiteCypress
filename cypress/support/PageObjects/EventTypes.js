@@ -45,6 +45,9 @@ class EventTypes {
     mode(){
         cy.xpath(this.modeOfEventBtn).click();
     }
+    eventType(){
+        cy.xpath(this.eventTypeBtn).click()
+    }
     host(){
         cy.xpath(this.eventHostBtn).click();
     }
