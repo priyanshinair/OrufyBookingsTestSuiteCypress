@@ -32,11 +32,13 @@ require('cypress-xpath')
 
 // global login operation
 Cypress.Commands.add("login", () => {
+  cy.session('loginSession', () => {
     cy.visit("https://beta.orufy.in/login?redirect=BOOKINGS");
     cy.xpath("/html/body/div/div[1]/div/form/div[1]/div/input").type("priyanshi+ww@orufy.com"); // Replace with your email locator
     cy.xpath('/html/body/div/div[1]/div/form/div[2]/div/input').type("Orufy@123"); // Replace with your password locator
     cy.xpath('/html/body/div/div[1]/div/form/div[3]/button').click(); // Replace with your submit button locator
     cy.wait(3000);
+  })
   });
 
 

@@ -8,6 +8,7 @@ class EventTypes {
     durationTypeBtn = "/html/body/div[2]/div/div[2]/form/div[3]/button"
     modeOfEventBtn = "/html/body/div[2]/div/div[2]/form/div[4]/button"
     eventTypeBtn = "/html/body/div[2]/div/div[2]/form/div[5]/button"
+    collectiveBtn = "/html/body/div[2]/div/div[2]/form/div[6]/select/option[3]"
     eventHostBtn = "/html/body/div[2]/div/div[2]/form/div[6]/button"
     makeSceretBtn = "/html/body/div[2]/div/div[2]/form/div[7]/div/button"
     saveBtn = "/html/body/div[2]/div/div[2]/form/div[8]/button"
@@ -47,6 +48,9 @@ class EventTypes {
     }
     eventType(){
         cy.xpath(this.eventTypeBtn).click()
+    }
+    collective(){
+        cy.xpath(this.collectiveBtn).click({force:true});
     }
     host(){
         cy.xpath(this.eventHostBtn).click();
