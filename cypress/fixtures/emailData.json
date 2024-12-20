@@ -1,0 +1,15 @@
+[
+    {
+        "email" : "valid.email@example"
+    },
+    {
+        "email" : "valid.email@example.c"
+    },
+    {
+        "email" : "valid.email@examplecom"
+    },
+    {
+        "email" : "valid@valid.emailexample.com"
+    }
+
+]
