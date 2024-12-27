@@ -1,0 +1,41 @@
+name: Cypress Automation Tests
+
+on:
+  push:
+    branches:
+      - master #Trigger on pushes to the master branche
+
+  jobs:
+    cypress-tests:
+      runs-on: ubuntu-latest
+
+      steps:
+        #step1: check out your code
+        - name: Checkout code
+          uses: actions/checkout@v3
+
+        #step2: set up Node.js
+        - name: Setup Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version: 16 #replace with your Node.js version
+
+        #step 3: cache npm dependencies
+        - name: Cache Node modules
+          uses: actions/cache@v3
+          with:
+           path: ~/.npm
+           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+           restore-keys: |
+            ${{ runner.os }}-node-
+
+        #step 4: install dependencies
+        - name: Install dependencies
+          run: npm install 
+
+        #step5: run cypress tests
+        - name: Run cypress tests
+          run: npx cypress run
+
+        
+        
