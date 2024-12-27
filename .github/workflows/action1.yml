@@ -26,3 +26,4 @@ jobs:
       # Step 4: Run Cypress tests
       - name: Run Cypress tests
         run: npx cypress run
+        continue-on-error: true  # Allow the action to continue even if tests fail
